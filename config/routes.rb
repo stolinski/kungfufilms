@@ -1,5 +1,8 @@
 Kungfu::Application.routes.draw do
   resources :films
+
+
+  resources :films
   root :to => 'films#show'
 
 

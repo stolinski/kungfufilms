@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-star-rating
+//= require bootstrap
 //= require_tree .

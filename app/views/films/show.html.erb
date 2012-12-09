@@ -1,5 +1,35 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <b>Title:</b>
+  <%= @film.title %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @film.year %>
+</p>
+
+<p>
+  <b>Studio:</b>
+  <%= @film.studio %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @film.rating %>
+</p>
+
+<p>
+  <b>Director:</b>
+  <%= @film.director %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @film.notes %>
+</p>
+
 
 <%= link_to 'Edit', edit_film_path(@film) %> |
 <%= link_to 'Back', films_path %>

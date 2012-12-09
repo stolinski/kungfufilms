@@ -2,6 +2,12 @@
 
 <table>
   <tr>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Studio</th>
+    <th>Rating</th>
+    <th>Director</th>
+    <th>Notes</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +15,12 @@
 
 <% @films.each do |film| %>
   <tr>
+    <td><%= film.title %></td>
+    <td><%= film.year %></td>
+    <td><%= film.studio %></td>
+    <td><%= film.rating %></td>
+    <td><%= film.director %></td>
+    <td><%= film.notes %></td>
     <td><%= link_to 'Show', film %></td>
     <td><%= link_to 'Edit', edit_film_path(film) %></td>
     <td><%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>
