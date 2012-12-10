@@ -2,7 +2,14 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <h1 class="logo"><%= link_to "Kung Fu Movies", root_path, class: 'brand' %></h1>
+      <%= link_to "Kung Fu Movies", root_path, class: 'brand' %>
+      <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
     </div>
   </div>
 </div>
