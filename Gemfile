@@ -21,7 +21,7 @@ group :assets do
 
  	gem 'uglifier', '>= 1.0.3'
 end
-gem 'bootstrap-sass', '~> 2.2.1.1'
+
 gem 'jquery-rails'
 gem 'jquery-star-rating-rails'
 
