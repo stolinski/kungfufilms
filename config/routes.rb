@@ -3,7 +3,7 @@ Kungfu::Application.routes.draw do
 
 
   resources :films
-  root :to => 'films#show'
+  root :to => 'films#index'
 
 
   # The priority is based upon order of creation:
