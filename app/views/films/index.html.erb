@@ -1,9 +1,7 @@
-<h1>Listing films</h1>
-
-<table>
+<table class="films-table">
   <tr>
-    <th>Title</th>
     <th>Year</th>
+    <th>Title</th>
     <th>Studio</th>
     <th>Rating</th>
     <th>Director</th>
@@ -15,10 +13,17 @@
 
 <% @films.each do |film| %>
   <tr>
+    <td><%= film.year.year %></td>
     <td><%= film.title %></td>
-    <td><%= film.year %></td>
     <td><%= film.studio %></td>
-    <td><%= film.rating %></td>
+    <td><% (1..10).each do |n| %>
+            <% if n==film.rating %>
+                <input name="star<%= film.id %>" type="radio" class="star" disabled="disabled" checked="checked"/>
+            <% else %>
+                <input name="star<%= film.id %>" type="radio" class="star" disabled="disabled"/>
+            <% end %>
+        <% end %>
+    </td>
     <td><%= film.director %></td>
     <td><%= film.notes %></td>
     <td><%= link_to 'Show', film %></td>
@@ -27,7 +32,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Film', new_film_path %>

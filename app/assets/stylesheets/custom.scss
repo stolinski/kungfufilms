@@ -1,5 +1,27 @@
 // @import "bootstrap";
+@import 'compass';
 
+@mixin transition($sec: 0.2s) {
+-webkit-transition: all $sec ease-out;
+   -moz-transition: all $sec ease-out;
+    -ms-transition: all $sec ease-out;
+     -o-transition: all $sec ease-out;
+        transition: all $sec ease-out;
+}
+
+
+/* REQUIRES COMPASS */
+
+/* Faster gradients, if a stop is not specified a -20 of the start
+is assigned for you this may be adjustable in the near future */
+@mixin gradient($start, $stop:false) {
+    @if $stop {
+        @include background-image(linear-gradient($start, $stop));
+    } @else {
+        @include background-image(linear-gradient($start, $start - 20));
+    }
+
+}
 /* universal */
 
 html {
@@ -7,9 +29,57 @@ html {
 }
 
 body {
- 	padding: 60px;
+ 	padding:40px 60px 60px;
+ 	background-color: #ddd;
 }
 
 textarea {
 	height: 180px;
+}
+.logo {
+	margin-bottom: 80px;
+}
+.logo a {
+	font-size: 3.0em;
+	text-decoration:  none;
+	color: black;
+	line-height: 0.8em;
+	&:hover {
+		color:#333;
+	}
+}
+
+.btn {
+	@include box-shadow(1px 1px 4px rgba(black, 0.2));
+	text-decoration: none;
+	font-size:2.0em;
+	background: #999;
+	color:white;
+	font-weight: bold;
+	padding:5px 8px;
+	border-radius: 5px;
+	@include gradient(#999);
+	&:hover {
+		@include gradient(#888);
+	}
+}
+
+
+
+.films-table {
+	margin-top: 40px;
+	width:100%;
+	background: white;
+	@include box-shadow(1px 1px 4px rgba(black, 0.2));
+	th {
+		padding:5px;
+		text-align: left;
+		border-bottom:solid 2px red - 40;
+	}
+	tr:nth-child(even) {
+   		background-color: #eee;
+	}
+	td {
+		padding:10px;
+	}
 }

@@ -15,7 +15,7 @@ end
 group :assets do
  	gem 'sass-rails',   '~> 3.2.5'
  	gem 'coffee-rails', '~> 3.2.2'
-
+ 	gem 'compass-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
