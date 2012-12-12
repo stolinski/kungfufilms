@@ -1,7 +1,7 @@
 // @import "bootstrap";
 @import 'compass';
-$link:#0E8AB0;
-$red:#A80314;
+$link:#A80314;
+$blue:#0E8AB0;;
 @mixin transition($sec: 0.2s) {
 -webkit-transition: all $sec ease-out;
    -moz-transition: all $sec ease-out;
@@ -65,7 +65,7 @@ textarea {
 	}
 }
 .add-btn {
-	@include gradient($link);
+	@include gradient($blue);
 	float:right;
 }
 
@@ -78,7 +78,7 @@ textarea {
 	th {
 		padding:5px;
 		text-align: left;
-		border-bottom:solid 2px$red;
+		border-bottom:solid 2px$link;
 	}
 	tr:nth-child(even) {
    		background-color: #eee;
@@ -86,14 +86,21 @@ textarea {
 	td {
 		padding:10px;
 	}
+	.film-title a {
+		font-weight: bold;
+		font-size:1.6em;
+	}
 }
 .watch-icon {
 	font-size:2.0em;
+	margin:0 5px 10px 0;
 }
 .bluray-icon {
-	color:#04B04E;
+	color:$blue - 40;
 }
-
+.youtube-icon {
+	color:$link;
+}
 
 
 
