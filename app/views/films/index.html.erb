@@ -1,3 +1,6 @@
+<div class="links clearfix">
+    <%= link_to "Add New Film",  new_film_path, class: 'btn add-btn' %>
+</div>
 <table class="films-table">
   <tr>
     <th>Year</th>
@@ -5,16 +8,15 @@
     <th>Director</th>
     <th>Rating</th>
     <th>Studio</th>
+    <th>Watch</th>
     <th>Notes</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Modify</th>
   </tr>
 
 <% @films.each do |film| %>
   <tr>
     <td><%= film.year.year %></td>
-    <td><%= film.title %></td>
+    <td><%= link_to(film) do %><%= film.title %><% end %></td>
     <td><%= film.director %></td>
     <td><% (1..10).each do |n| %>
             <% if n==film.rating %>
@@ -25,10 +27,25 @@
         <% end %>
     </td>
     <td><%= film.studio %></td>
+    <td>
+         <% if film.bluray %>
+            <i class="watch-icon icon-film bluray-icon"></i>
+        <% end %>
+        <% if film.dvd %>
+            <i class="watch-icon icon-film dvd-icon"></i>
+        <% end %>
+        <% if film.drive %>
+            <i class="watch-icon icon-hdd drive-icon"></i>
+        <% end %>
+        <% if film.youtube != "" and film.youtube  %>
+            <a class="fancybox-media" href="<%= film.youtube %>"><i class="watch-icon icon-facetime-video"></i></a>
+        <% end %>
+    </td>
     <td><%= film.notes %></td>
-    <td><%= link_to 'Show', film %></td>
-    <td><%= link_to 'Edit', edit_film_path(film) %></td>
-    <td><%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+        <%= link_to(edit_film_path(film)) do %><i class="icon-edit"></i><% end %>
+        <%= link_to(film, method: :delete, data: { confirm: 'Are you sure?' }) do %><i class="icon-remove-sign"></i><% end %>
+    </td>
   </tr>
 <% end %>
 </table>

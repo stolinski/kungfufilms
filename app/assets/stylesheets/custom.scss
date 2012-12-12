@@ -1,6 +1,7 @@
 // @import "bootstrap";
 @import 'compass';
-
+$link:#0E8AB0;
+$red:#A80314;
 @mixin transition($sec: 0.2s) {
 -webkit-transition: all $sec ease-out;
    -moz-transition: all $sec ease-out;
@@ -32,15 +33,15 @@ body {
  	padding:40px 60px 60px;
  	background-color: #ddd;
 }
-
+a {
+	text-decoration: none;
+	color:$link;
+}
 textarea {
 	height: 180px;
 }
-.logo {
-	margin-bottom: 80px;
-}
 .logo a {
-	font-size: 3.0em;
+	font-size: 2.0em;
 	text-decoration:  none;
 	color: black;
 	line-height: 0.8em;
@@ -52,20 +53,23 @@ textarea {
 .btn {
 	@include box-shadow(1px 1px 4px rgba(black, 0.2));
 	text-decoration: none;
-	font-size:2.0em;
+	font-size:1.6em;
 	background: #999;
 	color:white;
 	font-weight: bold;
-	padding:5px 8px;
+	padding: 14px 8px;
 	border-radius: 5px;
 	@include gradient(#999);
 	&:hover {
 		@include gradient(#888);
 	}
 }
+.add-btn {
+	@include gradient($link);
+	float:right;
+}
 
-
-
+/* The Main Films Table */
 .films-table {
 	margin-top: 40px;
 	width:100%;
@@ -74,7 +78,7 @@ textarea {
 	th {
 		padding:5px;
 		text-align: left;
-		border-bottom:solid 2px red - 40;
+		border-bottom:solid 2px$red;
 	}
 	tr:nth-child(even) {
    		background-color: #eee;
@@ -82,4 +86,50 @@ textarea {
 	td {
 		padding:10px;
 	}
+}
+.watch-icon {
+	font-size:2.0em;
+}
+.bluray-icon {
+	color:#04B04E;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
 }

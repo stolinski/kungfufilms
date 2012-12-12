@@ -25,6 +25,7 @@ end
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'jquery-star-rating-rails'
+gem 'fancybox2-rails', '~> 0.2.1'
 
 group :production do
  	gem 'pg', '0.12.2'

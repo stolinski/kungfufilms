@@ -13,5 +13,6 @@
  *= require_tree .
  *= require jquery-star-rating
  *= require 'font-awesome'
+ *= require fancybox
  */
 

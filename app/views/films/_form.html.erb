@@ -11,23 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="title-form">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :watched %><br />
-    <%= f.check_box :watched %>
-  </div>
-  <div class="field">
+    <div class="year-form">
     <%= f.label :year %><br />
     <%= f.date_select :year, :start_year => 1960 %>
   </div>
-  <div class="field">
+    <div class="studio-form">
     <%= f.label :studio %><br />
     <%= f.text_field :studio %>
   </div>
-  <div class="field">
+  <div class="watched-form">
+    <%= f.label :watched %><br />
+    <%= f.check_box :watched %>
+  </div>
+    <div class="bluray-form">
+    <%= f.label :bluray %><br />
+    <%= f.check_box :bluray %>
+  </div>
+    <div class="dvd-form">
+    <%= f.label :dvd %><br />
+    <%= f.check_box :dvd %>
+  </div>
+    <div class="drive-form">
+    <%= f.label :drive %><br />
+    <%= f.check_box :drive %>
+  </div>
+    <div class="youtube-form">
+    <%= f.label :youtube %><br />
+    <%= f.text_field :youtube %>
+  </div>
+  <div class="rating-form">
     <%= f.label :rating %><br />
     <%= f.radio_button(:rating, 1,  class: "star") %>
     <%= f.radio_button(:rating, 2,  class: "star") %>
