@@ -2,9 +2,9 @@
   <tr>
     <th>Year</th>
     <th>Title</th>
-    <th>Studio</th>
-    <th>Rating</th>
     <th>Director</th>
+    <th>Rating</th>
+    <th>Studio</th>
     <th>Notes</th>
     <th></th>
     <th></th>
@@ -15,7 +15,7 @@
   <tr>
     <td><%= film.year.year %></td>
     <td><%= film.title %></td>
-    <td><%= film.studio %></td>
+    <td><%= film.director %></td>
     <td><% (1..10).each do |n| %>
             <% if n==film.rating %>
                 <input name="star<%= film.id %>" type="radio" class="star" disabled="disabled" checked="checked"/>
@@ -24,7 +24,7 @@
             <% end %>
         <% end %>
     </td>
-    <td><%= film.director %></td>
+    <td><%= film.studio %></td>
     <td><%= film.notes %></td>
     <td><%= link_to 'Show', film %></td>
     <td><%= link_to 'Edit', edit_film_path(film) %></td>
