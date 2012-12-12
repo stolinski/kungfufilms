@@ -45,7 +45,11 @@ textarea {
 	text-decoration:  none;
 	color: black;
 	line-height: 0.8em;
+	padding-bottom:  3px;
+	border-bottom: 5px solid $link;
+	@include transition;
 	&:hover {
+		padding-bottom:  1px;
 		color:#333;
 	}
 }
