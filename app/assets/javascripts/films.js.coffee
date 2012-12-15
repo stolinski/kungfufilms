@@ -11,21 +11,25 @@ query = "Human Lanterns"
 
 
 $ ->
+	$('.films-table').tablesorter();
+
 	$('tr.even, tr.odd').click ->
 		#Slides Drawer Down
 		current = $(this)
+		unless (current.next().find('.drawer').html().length > 0)
+			#Sets the query to the film title
+			query = current.find('.film-title').text()
+			$.ajax
+				url: movieSearchUrl + '&q=' + encodeURI(query) + pagelimit,
+				dataType: 'jsonp',
+				success:  (data) ->
+					if data.total == 0
+						current.next().find('.drawer').append('<p>'+ 'Film not found on Rotten Tomatos' + '</p>')
+					movies = data.movies
+					$.each(movies, (index, movie) ->
+						current.next().find('.drawer').append('<img src="' + movie.posters.profile + '" />')
+					)
 		current.next().find('.drawer').slideToggle()
-		#Sets the query to the film title
-		query = current.find('.film-title').text()
-		$.ajax
-			url: movieSearchUrl + '&q=' + encodeURI(query) + pagelimit,
-			dataType: 'jsonp',
-			success:  (data) ->
-
-				movies = data.movies
-				$.each(movies, (index, movie) ->
-					current.next().find('.drawer').append('<img src="' + movie.posters.profile + '" />')
-				)
 
 
 

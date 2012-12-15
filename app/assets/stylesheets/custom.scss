@@ -85,7 +85,10 @@ textarea {
 		border-bottom:solid 2px$link;
 	}
 	tr.even {
-   		background-color: #eee;
+   		// background-color: #eee;
+	}
+	tr:nth-child(even)  {
+		background-color: #eee;
 	}
 	td {
 		padding:10px;

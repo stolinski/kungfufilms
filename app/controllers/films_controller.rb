@@ -4,7 +4,7 @@ class FilmsController < ApplicationController
   def index
     require 'open-uri'
     require 'json'
-    @films = Film.all
+    @films = Film.order(:year)
     # json_object = JSON.parse(open("http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=qfe4te4dsrqabwgcq862rr3s&q=Human%20Lanterns").read)
     # @poster = json_object['movies'][0]['posters']['profile']
     # @test = Film.all

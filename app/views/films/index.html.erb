@@ -4,20 +4,22 @@
 <img src='<%= @poster %>' />
 <%= @test %>
 <table class="films-table">
-  <tr>
-    <th>Year</th>
-    <th>Title</th>
-    <th>Director</th>
-    <th>Rating</th>
-    <th>Studio</th>
-    <th>Watch</th>
-    <th>Modify</th>
-  </tr>
-
+    <thead>
+        <tr>
+          <th>Year</th>
+          <th>Title</th>
+          <th>Director</th>
+          <th>Rating</th>
+          <th>Studio</th>
+          <th>Watch</th>
+          <th>Modify</th>
+        </tr>
+    </thead>
+    <tbody>
 <% @films.each do |film| %>
   <tr class="<%= cycle('even', 'odd') -%>">
     <td class="film-year"><%= film.year.year %></td>
-    <td class="film-title"><%= link_to(film) do %><%= film.title %><% end %></td>
+    <td class="film-title"><a href="#"><%= film.title %></a></td>
     <td><%= film.director %></td>
     <td><% (1..10).each do |n| %>
             <% if n==film.rating %>
@@ -49,9 +51,9 @@
   </tr>
   <tr class="drawer-row">
     <td colspan="7">
-        <div class="drawer">
-        </div>
+        <div class="drawer"></div>
     </td>
   </tr>
 <% end %>
+</tbody>
 </table>

@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require jquery-star-rating
 //= require fancybox
+//= require jquery.tablesorter.js
 //= require_tree .
