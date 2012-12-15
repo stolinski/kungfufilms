@@ -1,6 +1,8 @@
 <div class="links clearfix">
     <%= link_to "Add New Film",  new_film_path, class: 'btn add-btn' %>
 </div>
+<img src='<%= @poster %>' />
+<%= @test %>
 <table class="films-table">
   <tr>
     <th>Year</th>
@@ -13,7 +15,7 @@
   </tr>
 
 <% @films.each do |film| %>
-  <tr>
+  <tr class="<%= cycle('even', 'odd') -%>">
     <td class="film-year"><%= film.year.year %></td>
     <td class="film-title"><%= link_to(film) do %><%= film.title %><% end %></td>
     <td><%= film.director %></td>
@@ -43,6 +45,12 @@
     <td class="modify">
         <%= link_to(edit_film_path(film)) do %><i class="icon-edit"></i><% end %>
         <%= link_to(film, method: :delete, data: { confirm: 'Are you sure?' }) do %><i class="icon-remove-sign"></i><% end %>
+    </td>
+  </tr>
+  <tr class="drawer-row">
+    <td colspan="7">
+        <div class="drawer">
+        </div>
     </td>
   </tr>
 <% end %>

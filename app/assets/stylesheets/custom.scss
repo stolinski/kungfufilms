@@ -84,7 +84,7 @@ textarea {
 		text-align: left;
 		border-bottom:solid 2px$link;
 	}
-	tr:nth-child(even) {
+	tr.even {
    		background-color: #eee;
 	}
 	td {
@@ -105,10 +105,22 @@ textarea {
 .youtube-icon {
 	color:$link;
 }
+.drawer-row {
+	td {
+		padding:0;
+	}
+}
 
-
-
-
+.drawer {
+	@include box-shadow(#333 0px 4px 10px inset);
+	background-color: #666;
+	padding: 20px;
+	display: none;
+	border:none;
+	img {
+		@include box-shadow(1px 1px 4px rgba(black, 0.6));
+	}
+}
 
 
 
