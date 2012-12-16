@@ -19,7 +19,7 @@
 <% @films.each do |film| %>
   <tr class="<%= cycle('even', 'odd') -%>">
     <td class="film-year"><%= film.year.year %></td>
-    <td class="film-title"><a href="#"><%= film.title %></a></td>
+    <td class="film-title"><%= film.title %></td>
     <td><%= film.director %></td>
     <td><% (1..10).each do |n| %>
             <% if n==film.rating %>

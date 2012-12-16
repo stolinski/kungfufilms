@@ -87,7 +87,11 @@ textarea {
 		border-bottom:solid 2px$link;
 	}
 	tr {
+		@include transition;
 		border-bottom: 1px  solid #111;
+		&:hover {
+			background: #eee;
+		}
 	}
 	tr.even {
    		// background-color: #eee;
@@ -98,7 +102,9 @@ textarea {
 	td {
 		padding:10px;
 	}
-	.film-title a {
+	.film-title {
+		cursor: pointer;
+		color:$link;
 		font-weight: bold;
 		font-size:1.6em;
 	}
