@@ -30,9 +30,10 @@
 /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-pencil:before { content: '\270e'; } /* '✎' */
-.icon-cancel-circle:before { content: '\2716'; } /* '✖' */
-.icon-eye:before { content: '\e70a'; } /* '' */
+.icon-pencil:before { content: '\e800'; } /* '' */
+.icon-cancel-circle:before { content: '\270e'; } /* '✎' */
+.icon-eye:before { content: '\2716'; } /* '✖' */
+.icon-basket:before { content: '\e73d'; } /* '' */
 .icon-hdd:before { content: '\f0a0'; } /* '' */
 .icon-youtube:before { content: '\f313'; } /* '' */
 .icon-cd:before { content: '\f4bf'; } /* '' */
