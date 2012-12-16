@@ -138,8 +138,17 @@ textarea {
 	color:white;
 	img {
 		@include box-shadow(1px 1px 4px rgba(black, 0.6));
+		float:left;
 	}
-
+	.movie-info {
+		float: left;
+		width: 60%;
+		margin-left: 20px;
+		background: white;
+		color:#222;
+		padding: 20px;
+		@include box-shadow(1px 1px 4px rgba(black, 0.6));
+	}
 }
 
 a i {
