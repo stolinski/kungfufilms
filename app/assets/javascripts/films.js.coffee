@@ -27,7 +27,8 @@ $ ->
 						current.next().find('.drawer').append('<p>'+ 'Film not found on Rotten Tomatos' + '</p>')
 					movies = data.movies
 					$.each(movies, (index, movie) ->
-						current.next().find('.drawer').append('<img src="' + movie.posters.profile + '" />')
+						current.next().find('.drawer').append('<img src="' + movie.posters.profile + '" />').append('<p class="synopsis">' + movie.runtime + '</p>')
+
 					)
 		current.next().find('.drawer').slideToggle()
 

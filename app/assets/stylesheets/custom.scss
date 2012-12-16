@@ -119,6 +119,15 @@ textarea {
 		padding:0;
 	}
 }
+.modify {
+	width: 62px;
+	i {
+		font-size:1.6em;
+		&.icon-pencil {
+			color: #333;
+		}
+	}
+}
 
 .drawer {
 	@include box-shadow(#333 0px 4px 10px inset);
@@ -126,12 +135,20 @@ textarea {
 	padding: 20px;
 	display: none;
 	border:none;
+	color:white;
 	img {
 		@include box-shadow(1px 1px 4px rgba(black, 0.6));
 	}
+
 }
 
-
+a i {
+	opacity: 0.8;
+	@include transition;
+	&:hover {
+		opacity: 1;
+	}
+}
 
 
 
