@@ -167,6 +167,22 @@ a i {
 
 
 
+
+
+
+
+::-moz-selection {
+    background: $link;
+    color:white;
+    text-shadow: none;
+}
+
+::selection {
+    background: $link;
+    color:white;
+    text-shadow: none;
+}
+
 /*
  * Clearfix: contain floats
  *
