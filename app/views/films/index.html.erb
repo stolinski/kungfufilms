@@ -32,21 +32,21 @@
     <td><%= film.studio %></td>
     <td>
          <% if film.bluray %>
-            <i class="watch-icon icon-film bluray-icon"></i>
+            <i class="watch-icon icon-cd bluray-icon"></i>
         <% end %>
         <% if film.dvd %>
-            <i class="watch-icon icon-film dvd-icon"></i>
+            <i class="watch-icon icon-cd dvd-icon"></i>
         <% end %>
         <% if film.drive %>
             <i class="watch-icon icon-hdd drive-icon"></i>
         <% end %>
         <% if film.youtube != "" and film.youtube  %>
-            <a class="youtube-icon fancybox-media" href="<%= film.youtube %>"><i class="watch-icon icon-facetime-video"></i></a>
+            <a class="youtube-icon fancybox-media" href="<%= film.youtube %>"><i class="watch-icon icon-youtube"></i></a>
         <% end %>
     </td>
     <td class="modify">
-        <%= link_to(edit_film_path(film)) do %><i class="icon-edit"></i><% end %>
-        <%= link_to(film, method: :delete, data: { confirm: 'Are you sure?' }) do %><i class="icon-remove-sign"></i><% end %>
+        <%= link_to(edit_film_path(film)) do %><i class="icon-pencil"></i><% end %>
+        <%= link_to(film, method: :delete, data: { confirm: 'Are you sure?' }) do %><i class="icon-cancel-circle"></i><% end %>
     </td>
   </tr>
   <tr class="drawer-row">

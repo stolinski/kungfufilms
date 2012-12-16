@@ -49,8 +49,6 @@ GEM
       multi_json (~> 1.0)
     fancybox2-rails (0.2.1)
       railties (>= 3.1.0)
-    font-awesome-rails (0.4.1)
-      railties (~> 3.1)
     fssm (0.2.9)
     hike (1.2.1)
     i18n (0.6.1)
@@ -122,7 +120,6 @@ DEPENDENCIES
   coffee-rails (~> 3.2.2)
   compass-rails
   fancybox2-rails (~> 0.2.1)
-  font-awesome-rails
   jquery-rails
   jquery-star-rating-rails
   pg (= 0.12.2)

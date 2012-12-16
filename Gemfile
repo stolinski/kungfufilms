@@ -22,7 +22,7 @@ group :assets do
 
  	gem 'uglifier', '>= 1.0.3'
 end
-gem 'font-awesome-rails'
+# gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'jquery-star-rating-rails'
 gem 'fancybox2-rails', '~> 0.2.1'
