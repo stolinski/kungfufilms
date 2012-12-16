@@ -1,9 +1,0 @@
-@charset "UTF-8";
-
-
-.icon-pencil:before { content: '\270e'; } /* '✎' */
-.icon-cancel-circle:before { content: '\2716'; } /* '✖' */
-.icon-eye:before { content: '\e70a'; } /* '' */
-.icon-hdd:before { content: '\f0a0'; } /* '' */
-.icon-youtube:before { content: '\f313'; } /* '' */
-.icon-cd:before { content: '\1F4BF'; } /* '\1f4bf' */
