@@ -16,7 +16,7 @@ $ ->
 	$('tr.even, tr.odd').click ->
 		#Slides Drawer Down
 		current = $(this)
-		unless (current.next().find('.drawer').html().length > 0)
+		unless (current.next().find('.drawer').length > 0)
 			#Sets the query to the film title
 			query = current.find('.film-title').text()
 			$.ajax
@@ -24,12 +24,12 @@ $ ->
 				dataType: 'jsonp',
 				success:  (data) ->
 					if data.total == 0
-						current.next().find('.drawer').append('<p>'+ 'Film not found on Rotten Tomatos' + '</p>')
+						current.after('<p>'+ 'Film not found on Rotten Tomatos' + '</p>')
 					movies = data.movies
 					$.each(movies, (index, movie) ->
-						current.next().find('.drawer').append('<img src="' + movie.posters.profile + '" />')
-							.append('<div class="movie-info"><p class="length">Length: ' + movie.runtime + ' minutes</p></div>')
-
+						current.after('<tr class="drawer-row"><td colspan="7"><div class="drawer clearfix"><img src="' + movie.posters.profile + '" /></div></td></tr>')
+						current.next().find('.drawer').append('<div class="movie-info"><p class="length">Length: ' + movie.runtime + ' minutes</p></div>')
+						current.next().find('.drawer').slideToggle()
 					)
 		current.next().find('.drawer').slideToggle()
 
@@ -44,5 +44,8 @@ $ ->
 			helpers : {
 				media : {}
 			}
+
+
+
 
 

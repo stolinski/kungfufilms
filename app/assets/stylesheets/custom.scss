@@ -136,6 +136,7 @@ textarea {
 }
 
 .drawer {
+	display: none;
 	@include box-shadow(#333 0px 4px 10px inset);
 	background-color: #666;
 	padding: 20px;
