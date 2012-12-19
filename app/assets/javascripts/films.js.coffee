@@ -10,7 +10,7 @@ baseUrl = 'http://imdbapi.org/'
 
 # pagelimit = '&page_limit=1'
 
-options = "&type=json&plot=full&episode=1&limit=1&yg=1&mt=none&lang=en-US&offset=&aka=full&release=full"
+options = "&type=jsonp&plot=full&episode=1&limit=1&yg=1&mt=none&lang=en-US&offset=&aka=full&release=full"
 query = "Human Lanterns"
 # ?title= "Human Lanterns"
 year = "1980"
@@ -27,10 +27,13 @@ $ ->
 			query = current.find('.film-title').text()
 			year = current.find('.film-year').text()
 			$.ajax
-				url: baseUrl + '?title=' + encodeURI(query) + '&year=' + encodeURI(year) + options,
-				dataType: 'json',
+				dataType: 'jsonp',
+				jsonpCallback: 'imdbapi',
+
+				url: baseUrl + '?title=' + encodeURI(query) + '&year=' + encodeURI(year) + options + '&callback="',
 				success:  (data) ->
 					film = data[0]
+					console.log film.poster
 					if data.total == 0
 						current.after('<p>'+ 'Film not found on Rotten Tomatos' + '</p>')
 
