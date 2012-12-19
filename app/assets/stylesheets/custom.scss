@@ -25,6 +25,18 @@ is assigned for you this may be adjustable in the near future */
 }
 
 
+@font-face {
+    font-family: 'weston_freeregular';
+    src: url('weston_free-webfont.eot');
+    src: url('weston_free-webfont.eot?#iefix') format('embedded-opentype'),
+         url('weston_free-webfont.woff') format('woff'),
+         url('weston_free-webfont.ttf') format('truetype'),
+         url('weston_free-webfont.svg#weston_freeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /* universal */
 
 html {
@@ -47,12 +59,13 @@ textarea {
 	text-decoration:  none;
 	color: black;
 	line-height: 0.8em;
-	padding-bottom:  3px;
+	padding-bottom:  2px;
 	border-bottom: 5px solid $link;
+	font-family: 'weston_freeregular', Rockwell;
 	@include transition;
 	&:hover {
-		padding-bottom:  1px;
-		color:#333;
+		padding-bottom:  0px;
+		color:#555;
 	}
 }
 
