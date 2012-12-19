@@ -159,6 +159,7 @@ textarea {
 	img {
 		@include box-shadow(1px 1px 4px rgba(black, 0.6));
 		float:left;
+		max-width: 130px;
 	}
 	.movie-info {
 		float: left;
