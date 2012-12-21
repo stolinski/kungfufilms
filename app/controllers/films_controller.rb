@@ -57,7 +57,7 @@ class FilmsController < ApplicationController
 
     respond_to do |format|
       if @film.save
-        format.html { redirect_to root_url, notice: 'Film was successfully created.' }
+        format.html { redirect_to  my_path, notice: 'Film was successfully created.' }
         format.json { render json: @film, status: :created, location: @film }
       else
         format.html { render action: "new" }
@@ -73,7 +73,7 @@ class FilmsController < ApplicationController
 
     respond_to do |format|
       if @film.update_attributes(params[:film])
-        format.html { redirect_to root_url, notice: 'Film was successfully updated.' }
+        format.html { redirect_to  my_path, notice: 'Film was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
