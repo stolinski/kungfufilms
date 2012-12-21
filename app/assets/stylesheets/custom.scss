@@ -157,6 +157,7 @@ textarea {
 	display: none;
 	border:none;
 	color:white;
+	background-position-y: 30%;
 	img {
 		@include box-shadow(1px 1px 4px rgba(black, 0.6));
 		float:left;
@@ -167,7 +168,6 @@ textarea {
 		width: 60%;
 		margin-left: 20px;
 		background: rgba(white, 0.9);
-
 		color:#222;
 		padding: 20px;
 		@include box-shadow(1px 1px 4px rgba(black, 0.6));
