@@ -9,6 +9,7 @@ baseUrl = 'http://api.themoviedb.org/'
 
 # movieSearchUrl = baseUrl + '/movies.json?apikey=' + apikey
 movieSearchUrl = baseUrl + '3/search/movie?api_key=' + apikey
+movieLookUp = baseUrl + '3/movie/'
 # pagelimit = '&page_limit=1'
 
 # options = "&type=jsonp&plot=full&episode=1&limit=1&yg=1&mt=none&lang=en-US&offset=&aka=full&release=full"
@@ -29,18 +30,19 @@ $ ->
 			year = current.find('.film-year').text()
 			$.ajax
 				dataType: 'json',
-				# dataType: 'jsonp',
-				# jsonpCallback: 'imdbapi',
-				# url: baseUrl + '?title=' + encodeURI(query) + '&year=' + encodeURI(year) + options + '&callback="',
 				url: movieSearchUrl + "&query=" + query + "&year=" + year
 				success:  (data) ->
 					film = data['results'][0]
-					console.log film
-					# if data.total == 0
-					# 	current.after('<p>'+ 'Film not found on Rotten Tomatos' + '</p>')
-
+					id = film.id
+					console.log movieLookUp + id + '?api_key=' + apikey
 					current.after('<tr class="drawer-row"><td colspan="7"><div class="drawer clearfix"><img src="http://cf2.imgobject.com/t/p/w154' + film.poster_path + '" /></div></td></tr>')
-					# current.next().find('.drawer').append('<div class="movie-info"><p class="length">Length: ' + film.runtime + ' minutes</p></div>')
+					$.ajax
+						dataType: 'json',
+						url: movieLookUp + id + '?api_key=' + apikey
+						success:  (movie) ->
+							console.log movie
+							current.next().find('.drawer').append('<div class="movie-info"><p class="length">Length: ' + movie.runtime + ' minutes</p><p class="overview">' + movie.overview + '</p></div>')
+
 					current.next().find('.drawer').css('background-image': 'url(http://cf2.imgobject.com/t/p/w780' + film.backdrop_path + ")")
 					current.next().find('.drawer').slideToggle()
 

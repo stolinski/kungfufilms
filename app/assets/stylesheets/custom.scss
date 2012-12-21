@@ -166,7 +166,8 @@ textarea {
 		float: left;
 		width: 60%;
 		margin-left: 20px;
-		background: white;
+		background: rgba(white, 0.9);
+
 		color:#222;
 		padding: 20px;
 		@include box-shadow(1px 1px 4px rgba(black, 0.6));
