@@ -5,9 +5,18 @@ class FilmsController < ApplicationController
     require 'open-uri'
     require 'json'
     @films = Film.order(:year)
-    # json_object = JSON.parse(open("http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=qfe4te4dsrqabwgcq862rr3s&q=Human%20Lanterns").read)
-    # @poster = json_object['movies'][0]['posters']['profile']
-    # @test = Film.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @films }
+    end
+  end
+
+  def my
+    require 'open-uri'
+    require 'json'
+    @films = Film.order(:year)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @films }

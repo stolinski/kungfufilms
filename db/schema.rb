@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212011143) do
+ActiveRecord::Schema.define(:version => 20121221182559) do
 
   create_table "films", :force => true do |t|
     t.string   "title"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20121212011143) do
     t.boolean  "dvd"
     t.boolean  "bluray"
     t.boolean  "drive"
+    t.string   "buy"
+    t.string   "streaming"
   end
 
 end

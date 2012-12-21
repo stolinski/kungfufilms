@@ -35,7 +35,7 @@ $ ->
 					film = data['results'][0]
 					id = film.id
 					console.log movieLookUp + id + '?api_key=' + apikey
-					current.after('<tr class="drawer-row"><td colspan="7"><div class="drawer clearfix"><img src="http://cf2.imgobject.com/t/p/w154' + film.poster_path + '" /></div></td></tr>')
+					current.after('<tr class="drawer-row"><td colspan="20"><div class="drawer clearfix"><img src="http://cf2.imgobject.com/t/p/w154' + film.poster_path + '" /></div></td></tr>')
 					$.ajax
 						dataType: 'json',
 						url: movieLookUp + id + '?api_key=' + apikey

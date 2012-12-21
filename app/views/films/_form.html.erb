@@ -2,7 +2,6 @@
   <% if @film.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@film.errors.count, "error") %> prohibited this film from being saved:</h2>
-
       <ul>
       <% @film.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,39 +10,48 @@
     </div>
   <% end %>
 
-  <div class="title-form">
+  <div class="title-form form">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-    <div class="year-form">
+    <div class="year-form form">
     <%= f.label :year %><br />
     <%= f.date_select :year, :start_year => 1960 %>
   </div>
-    <div class="studio-form">
+    <div class="studio-form form">
     <%= f.label :studio %><br />
     <%= f.text_field :studio %>
   </div>
-  <div class="watched-form">
+  <div class="watched-form form">
     <%= f.label :watched %><br />
     <%= f.check_box :watched %>
   </div>
-    <div class="bluray-form">
+    <div class="bluray-form form">
     <%= f.label :bluray %><br />
     <%= f.check_box :bluray %>
   </div>
-    <div class="dvd-form">
+    <div class="dvd-form form">
     <%= f.label :dvd %><br />
     <%= f.check_box :dvd %>
   </div>
-    <div class="drive-form">
+    <div class="drive-form form">
     <%= f.label :drive %><br />
     <%= f.check_box :drive %>
   </div>
-    <div class="youtube-form">
+    <div class="youtube-form form">
     <%= f.label :youtube %><br />
     <%= f.text_field :youtube %>
   </div>
-  <div class="rating-form">
+    <div class="field-stream form">
+    <%= f.label :streaming %><br />
+    <%= f.text_field :streaming %>
+    </div>
+    <div class="field-buy form">
+      <%= f.label :buy %><br />
+      <%= f.text_field :buy %>
+    </div>
+
+  <div class="rating-form form">
     <%= f.label :rating %><br />
     <%= f.radio_button(:rating, 1,  class: "star") %>
     <%= f.radio_button(:rating, 2,  class: "star") %>
@@ -57,11 +65,11 @@
     <%= f.radio_button(:rating, 10,  class: "star") %>
     <br />
   </div>
-  <div class="field">
+  <div class="field form">
     <%= f.label :director %><br />
     <%= f.text_field :director %>
   </div>
-  <div class="field">
+  <div class="field form">
     <%= f.label :notes %><br />
     <%= f.text_area :notes %>
   </div>
