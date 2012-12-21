@@ -152,6 +152,7 @@ textarea {
 	display: none;
 	@include box-shadow(#333 0px 4px 10px inset);
 	background-color: #666;
+	background-size: cover;
 	padding: 20px;
 	display: none;
 	border:none;

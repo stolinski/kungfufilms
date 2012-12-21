@@ -11,3 +11,13 @@ The icons present show if the film is in my personal collection. If the film is 
 The star rating is my own personal rating on the film, films without a rating have not yet been seen by me.
 
 Email me at <scott.tolinski@gmail.com> for more information.
+
+
+Version 1.0
+
+Features in the pipeline
+
+* Links to purchase films
+* More film information
+* Ajax Film Adding
+* Improved sorting and filtering
