@@ -34,6 +34,16 @@ class FilmsController < ApplicationController
     end
   end
 
+  def year
+    @film = Film.find(params[:year])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @film }
+    end
+  end
+
+
   # GET /films/new
   # GET /films/new.json
   def new
@@ -91,6 +101,7 @@ class FilmsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to films_url }
       format.json { head :no_content }
+      format.js
     end
   end
 end

@@ -18,7 +18,7 @@
     </thead>
     <tbody>
 <% @films.each do |film| %>
-  <tr class="<%= cycle('even', 'odd') -%>">
+  <tr class="<%= cycle('even', 'odd') -%>" id="film_<%= film.id %>">
     <td class="film-year"><%= film.year.year %></td>
     <td class="film-title"><%= film.title %></td>
     <td><%= film.director %></td>
@@ -52,7 +52,7 @@
     </td>
     <td class="modify">
         <%= link_to(edit_film_path(film)) do %><i class="icon-pencil"></i><% end %>
-        <%= link_to(film, method: :delete, data: { confirm: 'Are you sure?' }) do %><i class="icon-cancel-circle"></i><% end %>
+        <%= link_to(film, method: :delete, remote: true) do %><i class="icon-cancel-circle"></i><% end %>
     </td>
   </tr>
 <% end %>

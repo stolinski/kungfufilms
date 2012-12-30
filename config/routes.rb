@@ -5,6 +5,7 @@ Kungfu::Application.routes.draw do
   resources :films
   root :to => 'films#index'
   match '/my', :to => 'films#my'
+  match "/year/:year" => "films#year"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

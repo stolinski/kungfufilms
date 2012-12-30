@@ -21,9 +21,9 @@ year = "1980"
 $ ->
 	$('.films-table').tablesorter();
 
-	$('tr.even, tr.odd').click ->
+	$('tr.even .film-title, tr.odd .film-title').click ->
 		#Slides Drawer Down
-		current = $(this)
+		current = $(this).parent();
 		unless (current.next().find('.drawer').length > 0)
 			#Sets the query to the film title
 			query = current.find('.film-title').text()
