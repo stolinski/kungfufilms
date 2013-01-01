@@ -33,18 +33,22 @@ $ ->
 				url: movieSearchUrl + "&query=" + query + "&year=" + year
 				success:  (data) ->
 					film = data['results'][0]
-					id = film.id
-					console.log movieLookUp + id + '?api_key=' + apikey
-					current.after('<tr class="drawer-row"><td colspan="20"><div class="drawer clearfix"><img src="http://cf2.imgobject.com/t/p/w154' + film.poster_path + '" /></div></td></tr>')
-					$.ajax
-						dataType: 'json',
-						url: movieLookUp + id + '?api_key=' + apikey
-						success:  (movie) ->
-							console.log movie
-							current.next().find('.drawer').append('<div class="movie-info"><p class="length">Length: ' + movie.runtime + ' minutes</p><p class="overview">' + movie.overview + '</p></div>')
+					if film != undefined
+						id = film.id
+						current.after('<tr class="drawer-row"><td colspan="20"><div class="drawer clearfix"><img src="http://cf2.imgobject.com/t/p/w154' + film.poster_path + '" /></div></td></tr>')
+						$.ajax
+							dataType: 'json',
+							url: movieLookUp + id + '?api_key=' + apikey
+							success:  (movie) ->
+								console.log movie
+								current.next().find('.drawer').append('<div class="movie-info"><p class="length">Length: ' + movie.runtime + ' minutes</p><p class="overview">' + movie.overview + '</p></div>')
 
-					current.next().find('.drawer').css('background-image': 'url(http://cf2.imgobject.com/t/p/w780' + film.backdrop_path + ")")
-					current.next().find('.drawer').slideToggle()
+						current.next().find('.drawer').css('background-image': 'url(http://cf2.imgobject.com/t/p/w780' + film.backdrop_path + ")")
+						current.next().find('.drawer').slideToggle()
+					else
+						current.after('<tr class="drawer-row"><td colspan="20"><div class="drawer clearfix"><p>Film information not available</p></div></td></tr>')
+						current.next().find('.drawer').slideToggle()
+
 
 		current.next().find('.drawer').slideToggle()
 
