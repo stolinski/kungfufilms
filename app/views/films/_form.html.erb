@@ -20,7 +20,7 @@
   </div>
     <div class="studio-form form">
     <%= f.label :studio %><br />
-    <%= f.text_field :studio %>
+    <%= collection_select(:film, :studio_id, Studio.all, :id, :name) %>
   </div>
   <div class="watched-form form">
     <%= f.label :watched %><br />

@@ -11,12 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121221182559) do
+ActiveRecord::Schema.define(:version => 20130109043615) do
 
   create_table "films", :force => true do |t|
     t.string   "title"
     t.date     "year"
-    t.string   "studio"
     t.integer  "rating"
     t.string   "director"
     t.text     "notes"
@@ -29,6 +28,15 @@ ActiveRecord::Schema.define(:version => 20121221182559) do
     t.boolean  "drive"
     t.string   "buy"
     t.string   "streaming"
+    t.integer  "studio_id"
+  end
+
+  add_index "films", ["studio_id"], :name => "index_films_on_studio_id"
+
+  create_table "studios", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
