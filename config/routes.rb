@@ -1,4 +1,7 @@
 Kungfu::Application.routes.draw do
+  resources :directors
+
+
   resources :studios
 
 

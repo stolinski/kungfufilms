@@ -67,7 +67,7 @@
   </div>
   <div class="field form">
     <%= f.label :director %><br />
-    <%= f.text_field :director %>
+    <%= collection_select(:film, :director_id, Director.all, :id, :name) %>
   </div>
   <div class="field form">
     <%= f.label :notes %><br />
