@@ -1,4 +1,4 @@
-<%= form_for(@studio) do |f| %>
+<%= simple_form_for(@studio) do |f| %>
   <% if @studio.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@studio.errors.count, "error") %> prohibited this studio from being saved:</h2>
@@ -11,10 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+  <%= f.input :name %>
   <div class="actions">
     <%= f.submit %>
   </div>
