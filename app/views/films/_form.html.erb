@@ -1,4 +1,4 @@
-<%= form_for(@film) do |f| %>
+<%= simple_form_for(@film) do |f| %>
   <% if @film.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@film.errors.count, "error") %> prohibited this film from being saved:</h2>
@@ -9,47 +9,16 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="title-form form">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-    <div class="year-form form">
-    <%= f.label :year %><br />
-    <%= f.date_select :year, :start_year => 1960 %>
-  </div>
-    <div class="studio-form form">
-    <%= f.label :studio %><br />
-    <%= collection_select(:film, :studio_id, Studio.all, :id, :name) %>
-  </div>
-  <div class="watched-form form">
-    <%= f.label :watched %><br />
-    <%= f.check_box :watched %>
-  </div>
-    <div class="bluray-form form">
-    <%= f.label :bluray %><br />
-    <%= f.check_box :bluray %>
-  </div>
-    <div class="dvd-form form">
-    <%= f.label :dvd %><br />
-    <%= f.check_box :dvd %>
-  </div>
-    <div class="drive-form form">
-    <%= f.label :drive %><br />
-    <%= f.check_box :drive %>
-  </div>
-    <div class="youtube-form form">
-    <%= f.label :youtube %><br />
-    <%= f.text_field :youtube %>
-  </div>
-    <div class="field-stream form">
-    <%= f.label :streaming %><br />
-    <%= f.text_field :streaming %>
-    </div>
-    <div class="field-buy form">
-      <%= f.label :buy %><br />
-      <%= f.text_field :buy %>
-    </div>
+    <%= f.input :title %>
+    <%= f.input :year, :start_year => 1960  %>
+    <%= f.input :studio_id, :collection => Studio.all, :selected => :id  %>
+    <%= f.input :watched %>
+    <%= f.input :bluray %>
+    <%= f.input :dvd %>
+    <%= f.input :drive %>
+    <%= f.input :youtube %>
+    <%= f.input :streaming %>
+    <%= f.input :buy %>
 
   <div class="rating-form form">
     <%= f.label :rating %><br />
@@ -65,14 +34,8 @@
     <%= f.radio_button(:rating, 10,  class: "star") %>
     <br />
   </div>
-  <div class="field form">
-    <%= f.label :director %><br />
-    <%= collection_select(:film, :director_id, Director.all, :id, :name) %>
-  </div>
-  <div class="field form">
-    <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
-  </div>
+  <%= f.input :director_id, :collection => Director.all, :selected => :id  %>
+  <%= f.input :notes %>
   <div class="actions">
     <%= f.submit  'Submit', :class => 'btn btn-primary btn-large' %>
   </div>
