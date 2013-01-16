@@ -49,10 +49,11 @@ class FilmsController < ApplicationController
   def new
     @film = Film.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @film }
-    end
+    # respond_to do |format|
+    #   format.html # new.html.erb
+    #   format.json { render json: @film }
+    #   format.js
+    # end
   end
 
   # GET /films/1/edit
@@ -64,15 +65,11 @@ class FilmsController < ApplicationController
   # POST /films.json
   def create
     @film = Film.new(params[:film])
-
     respond_to do |format|
-      if @film.save
-        format.html { redirect_to  my_path, notice: 'Film was successfully created.' }
-        format.json { render json: @film, status: :created, location: @film }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @film.errors, status: :unprocessable_entity }
-      end
+      @film.save
+      format.html { redirect_to  my_path, notice: 'Film was successfully created.' }
+      format.json { render json: @film, status: :created, location: @film }
+      format.js
     end
   end
 

@@ -1,22 +1,4 @@
-<div class="links clearfix">
-    <%= link_to "Add New Film",  new_film_path, class: 'btn add-btn', id: 'new_film_btn', remote: true %>
-</div>
-<img src='<%= @poster %>' />
-<%= @test %>
-<table class="films-table">
-    <thead>
-        <tr>
-          <th>Year</th>
-          <th>Title</th>
-          <th>Rating</th>
-          <th>Buy</th>
-          <th>Watch</th>
-          <th>Modify</th>
-        </tr>
-    </thead>
-    <tbody>
-<% @films.each do |film| %>
-  <tr class="<%= cycle('even', 'odd') -%>" id="film_<%= film.id %>">
+ <tr class="<%= cycle('even', 'odd') -%>" id="film_<%= film.id %>">
     <td class="film-year"><%= film.year.year %></td>
     <td class="film-title"><%= film.title %></td>
     <td><% (1..10).each do |n| %>
@@ -51,6 +33,3 @@
         <%= link_to(film, method: :delete, remote: true) do %><i class="icon-cancel-circle"></i><% end %>
     </td>
   </tr>
-<% end %>
-</tbody>
-</table>
