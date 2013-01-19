@@ -5,10 +5,12 @@ Kungfu::Application.routes.draw do
   resources :studios
 
 
-  resources :films
+  resources :films do
+    collection do
+      get :search
+    end
+  end
 
-
-  resources :films
   root :to => 'films#index'
   match '/my', :to => 'films#my'
   match "/year/:year" => "films#year"

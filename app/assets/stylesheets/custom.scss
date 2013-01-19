@@ -181,6 +181,29 @@ a i {
 		opacity: 1;
 	}
 }
+/* New form ajax */
+#new_film, .edit_film {
+	margin-top: 20px;
+	background: white;
+	padding:20px;
+	@include box-shadow(1px 1px 4px rgba(black, 0.2));
+	.input {
+		margin-bottom: 5px;
+	}
+	.btn {
+		@include gradient($blue);
+		border:none;
+		&:hover {
+			@include gradient(#888);
+		}
+	}
+}
+
+/* Edit form ajax */
+.edit_film {
+	position: absolute;
+	top:20px;
+}
 
 /* Edit Page */
 .edit-contain {

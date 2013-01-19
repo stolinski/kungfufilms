@@ -77,15 +77,11 @@ class FilmsController < ApplicationController
   # PUT /films/1.json
   def update
     @film = Film.find(params[:id])
-
+    @film.update_attributes(params[:film])
     respond_to do |format|
-      if @film.update_attributes(params[:film])
         format.html { redirect_to  my_path, notice: 'Film was successfully updated.' }
         format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @film.errors, status: :unprocessable_entity }
-      end
+        format.js
     end
   end
 

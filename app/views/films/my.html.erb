@@ -47,7 +47,7 @@
         <% end %>
     </td>
     <td class="modify">
-        <%= link_to(edit_film_path(film)) do %><i class="icon-pencil"></i><% end %>
+        <%= link_to(edit_film_path(film), remote: true) do %><i class="icon-pencil"></i><% end %>
         <%= link_to(film, method: :delete, remote: true) do %><i class="icon-cancel-circle"></i><% end %>
     </td>
   </tr>

@@ -1,0 +1,27 @@
+<%= simple_form_for @film, remote: true do |f| %>
+<h3>Edit FIlm</h3>
+    <div colspan="10"><%= f.input :year, :start_year => 1960  %>
+    <%= f.input :title %>
+    <%= f.radio_button(:rating, 1,  class: "star") %>
+    <%= f.radio_button(:rating, 2,  class: "star") %>
+    <%= f.radio_button(:rating, 3,  class: "star") %>
+    <%= f.radio_button(:rating, 4,  class: "star") %>
+    <%= f.radio_button(:rating, 5,  class: "star") %>
+    <%= f.radio_button(:rating, 6,  class: "star") %>
+    <%= f.radio_button(:rating, 7,  class: "star") %>
+    <%= f.radio_button(:rating, 8,  class: "star") %>
+    <%= f.radio_button(:rating, 9,  class: "star") %>
+    <%= f.radio_button(:rating, 10,  class: "star") %>
+      <%= f.input :studio_id, :collection => Studio.all, :selected => :id  %>
+      <%= f.input :director_id, :collection => Director.all, :selected => :id  %>
+    <%= f.input :watched %>
+    <%= f.input :bluray %>
+    <%= f.input :dvd %>
+    <%= f.input :drive %>
+    <%= f.input :youtube %>
+    <%= f.input :streaming %>
+    <%= f.input :buy %>
+      <%= f.input :notes %>
+      <%= f.submit  'Submit', :class => 'btn btn-primary btn-large' %>
+        </div>
+<% end %>
