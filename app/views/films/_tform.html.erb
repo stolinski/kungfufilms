@@ -1,4 +1,4 @@
-<%= simple_form_for @film, remote: true do |f| %>
+<%= simple_form_for @film do |f| %>
 <h3>Edit FIlm</h3>
     <div colspan="10"><%= f.input :year, :start_year => 1960  %>
     <%= f.input :title %>
@@ -12,8 +12,8 @@
     <%= f.radio_button(:rating, 8,  class: "star") %>
     <%= f.radio_button(:rating, 9,  class: "star") %>
     <%= f.radio_button(:rating, 10,  class: "star") %>
-      <%= f.input :studio_id, :collection => Studio.all, :selected => :id  %>
-      <%= f.input :director_id, :collection => Director.all, :selected => :id  %>
+    <%= f.input :studio_id, :collection => Studio.all, :selected => :id  %>
+    <%= f.input :director_id, :collection => Director.all, :selected => :id  %>
     <%= f.input :watched %>
     <%= f.input :bluray %>
     <%= f.input :dvd %>
