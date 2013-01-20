@@ -27,7 +27,7 @@
     </td>
 
     <td>
-         <% if film.buy %>
+         <% if film.buy != '' and film.buy %>
           <a target="_blank" href="<%= film.buy %>"><i class="icon-basket"></i></a>
         <% end %>
     </td>
