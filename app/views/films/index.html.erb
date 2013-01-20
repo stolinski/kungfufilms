@@ -4,8 +4,8 @@
           <th>Year</th>
           <th>Title</th>
           <th>Director</th>
-          <th>Rating</th>
           <th>Studio</th>
+          <th>Rating</th>
           <th>Buy</th>
           <th>Watch</th>
         </tr>
@@ -15,7 +15,8 @@
   <tr class="<%= cycle('even', 'odd') -%>">
     <td class="film-year"><%= film.year.year %></td>
     <td class="film-title"><%= film.title %></td>
-    <td></td>
+    <td><%= film.director.name %></td>
+     <td><%= film.studio.name %></td>
     <td><% (1..10).each do |n| %>
             <% if n==film.rating %>
                 <input name="star<%= film.id %>" type="radio" class="star" disabled="disabled" checked="checked"/>
@@ -24,7 +25,7 @@
             <% end %>
         <% end %>
     </td>
-    <td></td>
+
     <td>
          <% if film.buy %>
           <a target="_blank" href="<%= film.buy %>"><i class="icon-basket"></i></a>

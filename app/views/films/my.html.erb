@@ -9,6 +9,7 @@
           <th>Year</th>
           <th>Title</th>
           <th>Director</th>
+          <th>Studio</th>
           <th>Rating</th>
           <th>Buy</th>
           <th>Watch</th>
@@ -21,7 +22,10 @@
     <td class="film-year"><%= film.year.year %></td>
     <td class="film-title"><%= film.title %></td>
     <td class="film-director">
-
+      <%= film.director.name %>
+    </td>
+      <td class="film-studio">
+      <%= film.studio.name %>
     </td>
     <td><% (1..10).each do |n| %>
             <% if n==film.rating %>
