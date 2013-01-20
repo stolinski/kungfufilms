@@ -1,4 +1,4 @@
-<%= simple_form_for @film do |f| %>
+<%= simple_form_for @film, remote: true do |f| %>
 <h3>Edit FIlm</h3>
     <div colspan="10"><%= f.input :year, :start_year => 1960  %>
     <%= f.input :title %>
