@@ -22,8 +22,10 @@
     <td class="film-year"><%= film.year.year %></td>
     <td class="film-title"><%= film.title %></td>
     <td class="film-director">
+      <%= film.director_id %>
     </td>
       <td class="film-studio">
+      <%= film.studio_id %>
     </td>
     <td><% (1..10).each do |n| %>
             <% if n==film.rating %>
