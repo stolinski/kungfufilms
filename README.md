@@ -5,7 +5,7 @@
 
 A list for finding and watching KungFu & Wuxia films from the 1960's - 1980's
 
-![Screen Shot](http://kungfufilmlist.com/screenshot.png)
+![Screen Shot](http://kungfufilmlist.com/screenshot1.png)
 
 This list features mostly movies from the 1970's produced by the Shaw Brothers Studio.
 
