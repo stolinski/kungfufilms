@@ -9,23 +9,23 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130110003658) do
+ActiveRecord::Schema.define(version: 20130110003658) do
 
-  create_table "directors", :force => true do |t|
+  create_table "directors", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "films", :force => true do |t|
+  create_table "films", force: true do |t|
     t.string   "title"
     t.date     "year"
     t.integer  "rating"
     t.text     "notes"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "watched"
     t.string   "youtube"
     t.boolean  "dvd"
@@ -37,13 +37,13 @@ ActiveRecord::Schema.define(:version => 20130110003658) do
     t.integer  "director_id"
   end
 
-  add_index "films", ["director_id"], :name => "index_films_on_director_id"
-  add_index "films", ["studio_id"], :name => "index_films_on_studio_id"
+  add_index "films", ["director_id"], name: "index_films_on_director_id"
+  add_index "films", ["studio_id"], name: "index_films_on_studio_id"
 
-  create_table "studios", :force => true do |t|
+  create_table "studios", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

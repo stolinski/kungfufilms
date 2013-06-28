@@ -1,26 +1,26 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
-gem 'simple_form'
+gem 'rails', '4.0.0'
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do
-	gem 'sqlite3', '1.3.5'
+	gem 'sqlite3'
 end
-
-
+gem 'sqlite3'
+gem 'activerecord-deprecated_finders'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
- 	gem 'sass-rails',   '~> 3.2.5'
- 	gem 'coffee-rails', '~> 3.2.2'
- 	gem 'compass-rails'
+ 	gem 'sass-rails',   '~> 4.0.0'
+ 	gem 'coffee-rails', '~> 4.0.0'
+ 	gem 'compass-rails', github: 'milgner/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
- 	gem 'uglifier', '>= 1.0.3'
+ 	gem 'uglifier'
 end
 # gem 'font-awesome-rails'
 gem 'jquery-rails'
