@@ -36,18 +36,18 @@
         <% end %>
     </td>
     <td>
-         <% if film.buy != '' %>
+         <% if film.buy != '' and film.buy %>
             <a target="_blank" href="<%= film.buy %>"><i class="icon-basket"></i></a>
         <% end %>
     </td>
     <td>
-         <% if film.bluray != '' %>
+         <% if film.bluray != '' and film.bluray %>
             <i class="watch-icon icon-cd bluray-icon"></i>
         <% end %>
-        <% if film.dvd != '' %>
+        <% if film.dvd != ''and film.dvd %>
             <i class="watch-icon icon-cd dvd-icon"></i>
         <% end %>
-        <% if film.drive != '' %>
+        <% if film.drive != '' and film.drive %>
             <i class="watch-icon icon-hdd drive-icon"></i>
         <% end %>
         <% if film.youtube != "" and film.youtube  %>

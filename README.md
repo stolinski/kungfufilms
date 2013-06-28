@@ -1,8 +1,11 @@
 #KungFu List
 
+[KungFu Film List](http://kungfufilmlist.com)
+
+
 A list for finding and watching KungFu & Wuxia films from the 1960's - 1980's
 
-![Screen Shot](http://boiling-forest-4683.herokuapp.com/screenshot.png)
+![Screen Shot](http://kungfufilmlist.com/screenshot.png)
 
 This list features mostly movies from the 1970's produced by the Shaw Brothers Studio.
 
@@ -13,11 +16,9 @@ The star rating is my own personal rating on the film, films without a rating ha
 Email me at <scott.tolinski@gmail.com> for more information.
 
 
-Version 1.0
+Version 1.2
 
 Features in the pipeline
 
-* Links to purchase films
-* More film information
 * Ajax Film Adding
 * Improved sorting and filtering

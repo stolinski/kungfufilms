@@ -79,5 +79,6 @@ class DirectorsController < ApplicationController
       format.html { redirect_to directors_url }
       format.json { head :no_content }
     end
+
   end
 end
